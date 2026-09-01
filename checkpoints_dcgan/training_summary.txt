@@ -1,0 +1,17 @@
+Pre-treino DCGAN - resumo
+=========================
+Rodado em: 2026-09-01, GPU NVIDIA A100 80GB
+Epocas concluidas: 57 (treino interrompido; ultimo checkpoint salvo: epoca 55)
+Tempo: ~14 min
+Dados: 30.000 rostos CelebA (nielsr/CelebA-faces, HuggingFace), center-crop -> 64x64, [-1,1]
+Latente: dim(z) = INPUT_SHAPE = 64, Z_train ~ normal
+Otimizacao: Adam lr=1e-4 betas=(0.5,0.999), BCE, label smoothing, batch 32
+Arquitetura: identica as classes Generator/Discriminator do notebook
+
+Ultimas perdas (medias por epoca):
+Epoch 55/120 | 815s | g_loss 1.7684 | d_loss 0.4625
+Epoch 56/120 | 829s | g_loss 1.7834 | d_loss 0.4603
+Epoch 57/120 | 843s | g_loss 1.8267 | d_loss 0.4527
+
+generator_pretrained.pt / discriminator_pretrained.pt = checkpoint da epoca 55.
+Checkpoints por epoca inclusos: 10, 25, 40, 55 (para a celula de evolucao).
